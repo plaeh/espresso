@@ -1,0 +1,52 @@
+body {
+	background-image: url('img/background.png');
+	// background-image: -ms-linear-gradient(top, #333333, #222222);
+	// background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#222222));
+	// background-image: -webkit-linear-gradient(top, #333333, #222222);
+	// background-image: -o-linear-gradient(top, #333333, #222222);
+	// background-image: linear-gradient(top, #333333, #222222);
+	// background-image: -moz-linear-gradient(top, #E9E9E9 0%, #BBBABB 100%);
+	text-align: center;
+}
+
+
+header {
+  h1 {
+    font-size: 26px;
+    font-weight: bold;
+  }
+  p { font-size: 12px;
+    a { text-decoration: none;
+      &:hover { border-width: 1px }
+    }
+  }
+}
+
+
+.clear {
+	clear: both;
+}
+
+
+.row {
+}
+
+
+.slots {
+	list-style: none;
+	margin: auto;
+	width: 460px;
+	.slot {
+		float: left;
+		width: 150px;
+		height: 150px;
+		background: url('/img/slotbg.png');
+	}
+}
+
+.play {
+	margin: auto;
+}
+
+#svg-image-blur { height: 220px; width: 320px; }
+    #svg-image:hover { filter: url(#blur-effect-1); }

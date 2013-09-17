@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="slots.appcache"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -7,18 +7,32 @@
 
 	<title>Espresso bar!</title>
 
-	<link type="text/css" rel="stylesheet" href="styles.css">
-
 	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/slot.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/less.min.js"></script>
+	<script type="text/javascript" src="js/underscore-min.js"></script>
+	<script type="text/javascript" src="js/backbone-min.js"></script>
+	<!--custom javascript page-->
+	<script type="text/javascript" src="js/slotmachine.js"></script>
+
+	<link rel="stylesheet/less" type="text/css" href="styles/styles.less" />
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css" />
+
+	<script type="text/javascript">less.watch()</script>
 
 </head>
 <body>
 
+	<div class="row">
+		<ul class="slots">
+			<li class="slot" id="machine"><img src="img/tea.jpg"></li>
+			<li class="slot" id="filter"></li>
+			<li class="slot" id="material"></li>
+		</ul>
+	</div>
 
-
-
-
-
+	<div class="row">
+		<button class="play">trout</button>
+	</div>
 </body>
 </html>
