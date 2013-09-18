@@ -9,22 +9,30 @@ var $message = $('#outcome .message')
 
 var results = [
     "Enjoy",
-    "Coffee Time!",
+    "Taste your time",
     "Drink up!",
     "Yum!",
-    "Coffee~",
-    "Tea",
-    "Espresso!",
+    "Apples!",
     "Tasty!",
-    "Tea Time!"
+    "Tasty Time!"
+]
+
+var images = [
+    '/img/coffee.jpg',
+    '/img/espresso.jpg',
+    '/img/tea.jpg'
 ]
 
 $play.click(function() {
-    var spin_value = Math.floor(Math.random()*ITEM_COUNT);
-
+    var spin_value = Math.floor(Math.random()*ITEM_COUNT)
     var display_results = _.after(ITEM_COUNT, function() {
         var random_result_text = results[Math.floor(Math.random() * results.length)]
-        $message.text(random_result_text)
+        var correct_image = images[spin_value]
+
+        $message.html(
+            '<img src="' + correct_image + '">' + 
+            '<h5>' + random_result_text + '</h5>'
+        )
     })
 
     goToPosition('machine', spin_value, display_results)
@@ -43,4 +51,3 @@ function goToPosition(slot_type, position, callback) {
 
 
 })
-
