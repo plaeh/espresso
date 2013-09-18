@@ -2,58 +2,34 @@ body {
 	background-image: url('/img/bg.jpg');
 	background-position: top right;
 	background-size: 100%;
-	margin: 0 auto;
 	text-align: center;
 }
 
 
 header {
-	h1 {
-    	font-size: 26px;
-    	font-weight: bold;
-	}
-	h2 {
-		font-size: 20px;
-		font-weight: bold;
-	}
+	h1 { font-size: 26px; font-weight: bold; }
+	h2 { font-size: 20px; font-weight: bold; }
 	p { font-size: 12px;
 		a { text-decoration: none;
-			&:hover { border-width: 1px }
+			&:hover { border-width: 1px; }
 		}
 	}
 }
 
-
-.clear {
-	clear: both;
-}
-
-
 .slots {
-	margin-right: auto;
-	margin-left: auto;
 	list-style: none;
-	width: 500px;
+	width: 450px;
 	height: 160px;
+	margin: 0 auto;
+	
 	.slot {
 		float: left;
 		width: 150px;
 		height: 150px;
 		border: solid #888 5px;
+
+		&#machine{ background-image: url('/img/machines.png'); }
+		&#filter{ background-image: url('/img/filters.png'); }
+		&#material{ background-image: url('/img/materials.png'); }
 	}
-}
-#machine{
-	background-image: url('/img/machines.png')
-}
-
-#filter{
-	background-image: url('/img/filters.png')
-}
-
-#material{
-	background-image: url('/img/materials.png')
-}
-
-#play {
-	margin: auto;
 }

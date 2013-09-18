@@ -1,27 +1,30 @@
 $(document).ready(function() {
 
-var IMAGE_HEIGHT = 150;
-var DURATION = 10000; 
-var ITEM_COUNT = 3; 
+
+var IMAGE_HEIGHT = 150
+var DURATION = 2000
+var ITEM_COUNT = 3
 var $play = $('#play')
+var $message = $('#outcome .message')
 
-var results = new Array();
-    results[0] = "Enjoy";
-    results[1] = "Coffee Time!";
-    results[2] = "Drink up!";
-    results[3] = "Yum!";
-    results[4] = "Coffee~";
-    results[5] = "Tea";
-    results[6] = "Espresso!";
-    results[7] = "Tasty!";
-    results[8] = "Tea Time!";
+var results = [
+    "Enjoy",
+    "Coffee Time!",
+    "Drink up!",
+    "Yum!",
+    "Coffee~",
+    "Tea",
+    "Espresso!",
+    "Tasty!",
+    "Tea Time!"
+]
 
-$play.click(function(){
-    var spin_value = Math.floor(Math.random()*ITEM_COUNT)
+$play.click(function() {
+    var spin_value = Math.floor(Math.random()*ITEM_COUNT);
 
     var display_results = _.after(ITEM_COUNT, function() {
         var random_result_text = results[Math.floor(Math.random() * results.length)]
-        $('#outcome .message').text(random_result_text)
+        $message.text(random_result_text)
     })
 
     goToPosition('machine', spin_value, display_results)
@@ -31,14 +34,13 @@ $play.click(function(){
 
 function goToPosition(slot_type, position, callback) {
     var slot = $('.slot#' + slot_type)
-    var offset = ( ITEM_COUNT + position ) * IMAGE_HEIGHT
-
+    var offset = ( 10 * ITEM_COUNT + position ) * IMAGE_HEIGHT
 
     slot.css({ 'background-position-y': '0px' })
 
-
-    slot.animate({ 'background-position-y': offset + 'px' }, function() {
-        callback()
-    })
+    slot.animate({ 'background-position-y': offset + 'px' }, DURATION, callback)
 }
+
+
 })
+
