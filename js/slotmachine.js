@@ -4,7 +4,6 @@ $(document).ready(function() {
 var IMAGE_HEIGHT = 150;
 var DURATION = 10000; 
 var ITEM_COUNT = 3; 
-var RANDOM = Math.floor(Math.random()*3);
 var $play = $('#play')
 
 var results = new Array();
@@ -19,19 +18,19 @@ var results = new Array();
     results[8] = "Tea Time!";
 
 
-$play.click(function(){
-    goToPosition('machine', 300)
-    goToPosition('filter', 300)
-    goToPosition('material', 300)
-    var random_result_text = results[Math.floor(Math.random() * results.length)]
-    _.after(alert(random_result_text));
 
+$play.click(function(){
+    var spin_value = Math.floor(Math.random()*ITEM_COUNT)
+
+    goToPosition('machine', spin_value)
+    goToPosition('filter', spin_value)
+    goToPosition('material', spin_value)
 })
 
 
 function goToPosition(slot_type, position) {
     var slot = $('.slot#' + slot_type)
-    var offset = position * IMAGE_HEIGHT
+    var offset = ( ITEM_COUNT + position ) * IMAGE_HEIGHT
 
 
     slot.css({ 
@@ -49,9 +48,5 @@ function goToPosition(slot_type, position) {
         }
     })
 }
-
-var random_result_text = results[Math.floor(Math.random() * results.length)]
-_.after(alert(random_result_text));
-
 
 })
